@@ -48,7 +48,7 @@ A Python script to analyze images generated at different epochs of LoRA (Low-Ran
     You **MUST** update the following placeholder paths to your actual directory locations:
     ```python
     LORA_EPOCH_IMAGES_DIR = Path(r"C:\...\LoRA_Training\lora_epoch_images") # UPDATE THIS
-    CONTROL_IMAGES_DIR = Path(r"C:\Users\raxep\OneDrive\Desktop\LoRA_Training\control_images") # UPDATE THIS
+    CONTROL_IMAGES_DIR = Path(r"C:\...\LoRA_Training\control_images") # UPDATE THIS
     ```
     Also, adjust `NUM_EPOCHS` if needed:
     ```python
