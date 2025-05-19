@@ -1,6 +1,7 @@
 # LoRA Epoch Analyzer
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A Python script to analyze images generated at different epochs of LoRA (Low-Rank Adaptation) training. It helps in selecting an optimal LoRA checkpoint by evaluating image quality and similarity to control images.
 
 ## Features
