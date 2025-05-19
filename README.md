@@ -18,7 +18,7 @@ A Python script to analyze images generated at different epochs of LoRA (Low-Ran
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/Raxephion/loRA-Epoch-Analyser.git
     cd lora-epoch-analyzer
     ```
 
