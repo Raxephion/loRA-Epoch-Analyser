@@ -4,6 +4,61 @@
 
 A Python script to analyze images generated at different epochs of LoRA (Low-Rank Adaptation) training. It helps in selecting an optimal LoRA checkpoint by evaluating image quality and similarity to control images.
 
+### 🧠 1. Structural Similarity Index (SSIM)
+
+SSIM measures the similarity between two images in terms of:
+
+*   Luminance
+*   Contrast
+*   Structural features
+
+It’s computed as:
+
+$$
+\text{SSIM}(x,y) = \frac{(2\mu_x\mu_y + C_1)(2\sigma_{xy} + C_2)}{(\mu_x^2 + \mu_y^2 + C_1)(\sigma_x^2 + \sigma_y^2 + C_2)}
+$$
+
+Where:
+
+*   $\mu_x, \mu_y$: mean pixel intensities
+*   $\sigma_x, \sigma_y$: standard deviations
+*   $\sigma_{xy}$: cross-covariance
+*   $C_1, C_2$: constants to stabilize division
+
+**Interpretation:**
+
+*   SSIM ≈ 1.0 → Very similar (minimal LoRA effect)
+*   SSIM ≪ 1.0 → Significant difference (strong LoRA effect)
+
+### 🔍 2. BRISQUE (Blind/Referenceless Image Spatial Quality Evaluator)
+
+BRISQUE estimates the perceptual quality of an image without needing a reference. It uses machine learning and natural scene statistics to assess artifacts and distortions.
+
+**How it works:**
+
+*   Extracts statistical features from image patches
+*   Feeds them into a pretrained model (typically SVM)
+*   Outputs a quality score
+
+**Interpretation:**
+
+*   Lower score → Better image quality
+*   Higher score → More visible artifacts, noise, or degradation
+
+## 🎯 Goal
+
+By analyzing both:
+
+*   **SSIM** (similarity to original)
+*   **BRISQUE** (perceptual quality)
+
+The tool helps you:
+
+*   Detect the best LoRA strength for subtle or strong stylistic changes
+*   Avoid over-strengthening that introduces artifacts
+*   Maintain good image quality while applying desired effects
+
+
 ## Features
 
 -   Calculates **BRISQUE (Blind/Referenceless Image Spatial Quality Evaluator)** score for each epoch image. Lower BRISQUE scores generally indicate better perceptual quality (fewer artifacts).
