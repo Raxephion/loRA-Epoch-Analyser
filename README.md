@@ -54,7 +54,7 @@ By analyzing both:
 
 The tool helps you:
 
-*   Detect the best LoRA strength for subtle or strong stylistic changes
+*   Detect the best LoRA epoch for subtle or strong stylistic changes
 *   Avoid over-strengthening that introduces artifacts
 *   Maintain good image quality while applying desired effects
 
